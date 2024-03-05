@@ -125,9 +125,9 @@ chownr@^2.0.0:
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
 ci-info@watson/ci-info#f43f6a1cefff47fb361c88cf4b943fdbcaafe540:
-  version "2.0.0"
-  resolved "git+ssh://git@github.com/watson/ci-info.git#f43f6a1cefff47fb361c88cf4b943fdbcaafe540"
-  integrity sha512-8DvnKmP5qKJl6vuGbhJKfQ2ic3TKlEELH9QfiPNk5jV4n/pObTdOQ7eEklHDHGPFX81tyVxQxzjju/mU3hZI4Q==
+  version "4.0.0"
+  resolved "git+ssh://git@github.com/watson/ci-info.git"
+  integrity sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==
 
 commander@2.20.0:
   version "2.20.0"

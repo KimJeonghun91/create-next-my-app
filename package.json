@@ -1,21 +1,21 @@
 {
-  "name": "create-next-app",
+  "name": "create-next-my-app",
   "version": "14.1.2",
   "keywords": [
     "react",
     "next",
     "next.js"
   ],
-  "description": "Create Next.js-powered React apps with one command",
+  "description": "Create Next.js의 커스텀 CLI 입니다.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/next.js",
-    "directory": "packages/create-next-app"
+    "url": "https://github.com/KimJeonghun91/create-next-my-app",
+    "directory": "packages/create-next-my-app"
   },
-  "author": "Next.js Team <support@vercel.com>",
+  "author": "KimJeonghun91",
   "license": "MIT",
   "bin": {
-    "create-next-app": "./dist/index.js"
+    "create-next-my-app": "./dist/index.js"
   },
   "files": [
     "dist"

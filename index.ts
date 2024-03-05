@@ -84,7 +84,7 @@ const packageManager = !!program.useNpm
         : getPkgManager()
 
 async function run(): Promise<void> {
-  const conf = new Conf({ projectName: 'create-next-app' })
+  const conf = new Conf({ projectName: 'create-next-my-app' })
 
   if (program.resetPreferences) {
     conf.clear()
@@ -219,15 +219,15 @@ async function notifyUpdate(): Promise<void> {
     if (res?.latest) {
       const updateMessage =
         packageManager === 'yarn'
-          ? 'yarn global add create-next-app'
+          ? 'yarn global add create-next-my-app'
           : packageManager === 'pnpm'
-            ? 'pnpm add -g create-next-app'
+            ? 'pnpm add -g create-next-my-app'
             : packageManager === 'bun'
-              ? 'bun add -g create-next-app'
-              : 'npm i -g create-next-app'
+              ? 'bun add -g create-next-my-app'
+              : 'npm i -g create-next-my-app'
 
       console.log(
-        yellow(bold('A new version of `create-next-app` is available!')) +
+        yellow(bold('A new version of `create-next-my-app` is available!')) +
         '\n' +
         'You can update by running: ' +
         cyan(updateMessage) +
