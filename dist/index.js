@@ -30116,7 +30116,8 @@ const installTemplate = async ({ appName, root, packageManager, isOnline, templa
         }
     }
     /** Copy the version from package.json or override for tests. */
-    const version = (_a = process.env.NEXT_PRIVATE_TEST_VERSION) !== null && _a !== void 0 ? _a : package_namespaceObject.version;
+    const version = "14.1.2";
+    // const version = (_a = process.env.NEXT_PRIVATE_TEST_VERSION) !== null && _a !== void 0 ? _a : package_namespaceObject.version;
     /** Create a package.json for the new project and write it to disk. */
     const packageJson = {
         name: appName,
