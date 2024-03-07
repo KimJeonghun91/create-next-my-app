@@ -30017,10 +30017,7 @@ const external_fs_promises_namespaceObject = require("fs/promises");
 var external_fs_promises_default = /*#__PURE__*/__nccwpck_require__.n(external_fs_promises_namespaceObject);
 // EXTERNAL MODULE: ./node_modules/async-sema/lib/index.js
 var lib = __nccwpck_require__(1884);
-;// CONCATENATED MODULE: ./package.json
-const package_namespaceObject = JSON.parse('{"name":"create-next-my-app","version":"0.0.2","keywords":["react","next","next.js"],"description":"Create Next.js의 커스텀 CLI 입니다.","repository":{"type":"git","url":"https://github.com/KimJeonghun91/create-next-my-app","directory":"packages/create-next-my-app"},"author":"KimJeonghun91","license":"MIT","bin":{"create-next-my-app":"./dist/index.js"},"files":["dist"],"scripts":{"dev:build":"rm -rf dist && ncc build ./index.ts -w -o dist/","dev:test":"node ./dist/index.js","publish:npm":"npm publish","----prerelease":"node ../../scripts/rm.mjs dist","----release":"ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register","----prepublishOnly":"cd ../../ && turbo run build","----build":"pnpm release","----lint-fix":"pnpm prettier -w --plugin prettier-plugin-tailwindcss \'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}\'"},"devDependencies":{"@types/async-retry":"1.3.0","@types/ci-info":"2.0.0","@types/cross-spawn":"6.0.0","@types/node":"^20.2.5","@types/prompts":"2.4.2","@types/tar":"6.1.5","@types/validate-npm-package-name":"3.0.0","@vercel/ncc":"0.34.0","async-retry":"1.3.1","async-sema":"^3.1.1","ci-info":"watson/ci-info#f43f6a1cefff47fb361c88cf4b943fdbcaafe540","commander":"2.20.0","conf":"10.2.0","cross-spawn":"7.0.3","fast-glob":"3.3.1","picocolors":"1.0.0","prettier-plugin-tailwindcss":"0.3.0","prompts":"2.4.2","tar":"6.1.15","typescript":"^5.3.3","update-check":"1.5.4","validate-npm-package-name":"3.0.0"},"engines":{"node":">=18.17.0"}}');
 ;// CONCATENATED MODULE: ./templates/index.ts
-
 
 
 
@@ -30040,7 +30037,6 @@ const SRC_DIR_NAMES = ["app", "pages", "styles"];
  * Install a Next.js internal template to a given `root` directory.
  */
 const installTemplate = async ({ appName, root, packageManager, isOnline, template, mode, tailwind, eslint, srcDir, importAlias, }) => {
-    var _a;
     console.log((0,picocolors.bold)(`Using ${packageManager}.`));
     /**
      * Copy the template files to the target directory.
@@ -30116,8 +30112,8 @@ const installTemplate = async ({ appName, root, packageManager, isOnline, templa
         }
     }
     /** Copy the version from package.json or override for tests. */
-    const version = "14.1.2";
-    // const version = (_a = process.env.NEXT_PRIVATE_TEST_VERSION) !== null && _a !== void 0 ? _a : package_namespaceObject.version;
+    const baseNextVersion = '14.1.2';
+    const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
     /** Create a package.json for the new project and write it to disk. */
     const packageJson = {
         name: appName,
@@ -30135,7 +30131,7 @@ const installTemplate = async ({ appName, root, packageManager, isOnline, templa
         dependencies: {
             react: "^18",
             "react-dom": "^18",
-            next: version,
+            next: nextRepository,
         },
         devDependencies: {},
     };
@@ -30164,7 +30160,7 @@ const installTemplate = async ({ appName, root, packageManager, isOnline, templa
         packageJson.devDependencies = {
             ...packageJson.devDependencies,
             eslint: "^8",
-            "eslint-config-next": version,
+            "eslint-config-next": baseNextVersion,
         };
     }
     const devDeps = Object.keys(packageJson.devDependencies).length;
@@ -30296,6 +30292,8 @@ function validateNpmName(name) {
     };
 }
 
+;// CONCATENATED MODULE: ./package.json
+const package_namespaceObject = JSON.parse('{"name":"create-next-my-app","version":"0.0.3","keywords":["react","next","next.js"],"description":"Create Next.js의 커스텀 CLI 입니다.","repository":{"type":"git","url":"https://github.com/KimJeonghun91/create-next-my-app","directory":"packages/create-next-my-app"},"author":"KimJeonghun91","license":"MIT","bin":{"create-next-my-app":"./dist/index.js"},"files":["dist"],"scripts":{"dev:build":"rm -rf dist && ncc build ./index.ts -w -o dist/","dev:test":"node ./dist/index.js","publish:npm":"npm publish","----prerelease":"node ../../scripts/rm.mjs dist","----release":"ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register","----prepublishOnly":"cd ../../ && turbo run build","----build":"pnpm release","----lint-fix":"pnpm prettier -w --plugin prettier-plugin-tailwindcss \'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}\'"},"devDependencies":{"@types/async-retry":"1.3.0","@types/ci-info":"2.0.0","@types/cross-spawn":"6.0.0","@types/node":"^20.2.5","@types/prompts":"2.4.2","@types/tar":"6.1.5","@types/validate-npm-package-name":"3.0.0","@vercel/ncc":"0.34.0","async-retry":"1.3.1","async-sema":"^3.1.1","ci-info":"watson/ci-info#f43f6a1cefff47fb361c88cf4b943fdbcaafe540","commander":"2.20.0","conf":"10.2.0","cross-spawn":"7.0.3","fast-glob":"3.3.1","picocolors":"1.0.0","prettier-plugin-tailwindcss":"0.3.0","prompts":"2.4.2","tar":"6.1.15","typescript":"^5.3.3","update-check":"1.5.4","validate-npm-package-name":"3.0.0"},"engines":{"node":">=18.17.0"}}');
 ;// CONCATENATED MODULE: ./index.ts
 /* eslint-disable import/no-extraneous-dependencies */
 
