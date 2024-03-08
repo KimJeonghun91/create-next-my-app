@@ -168,7 +168,9 @@ export const installTemplate = async ({
   }
 
   /** Copy the version from package.json or override for tests. */
-  const version = process.env.NEXT_PRIVATE_TEST_VERSION ?? pkg.version;
+  // const version = process.env.NEXT_PRIVATE_TEST_VERSION ?? pkg.version;
+  const baseNextVersion = '14.1.2';
+  const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
 
   /** Create a package.json for the new project and write it to disk. */
   const packageJson: any = {
@@ -187,7 +189,7 @@ export const installTemplate = async ({
     dependencies: {
       react: "^18",
       "react-dom": "^18",
-      next: version,
+      next: nextRepository,
     },
     devDependencies: {},
   };
@@ -219,7 +221,7 @@ export const installTemplate = async ({
     packageJson.devDependencies = {
       ...packageJson.devDependencies,
       eslint: "^8",
-      "eslint-config-next": version,
+      "eslint-config-next": baseNextVersion,
     };
   }
 
