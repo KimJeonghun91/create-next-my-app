@@ -32,3 +32,5 @@ npm run test
 
 - [ ]  디자인 시스템 및 디자인 패키지
     - [ ]  style/theme
+
+- [ ]  npm install 404 에러
