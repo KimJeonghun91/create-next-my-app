@@ -1,7 +1,7 @@
 # Create Next App 커스텀
 
 ```tsx
-const baseNextVersion = '14.1.2';
+const baseNextVersion = '14.1.3';
 const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
 ```
 
