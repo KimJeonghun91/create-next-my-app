@@ -243,7 +243,7 @@ export const installTemplate = async ({
 
   console.log();
 
-  await install(packageManager, isOnline);
+  // await install(packageManager, isOnline);
 };
 
 export * from "./types";
