@@ -1,33 +1,21 @@
 # Create Next App 커스텀 템플릿 입니다.
 - ts
-- next 14
+- next 14.1.3
 - app-router
 - eslint
 
+
 ### Installing dependencies:
-- react
-- react-dom
-- next
-
-### Installing devDependencies:
-- typescript
-- @types/node
-- @types/react
-- @types/react-dom
-- eslint
-- eslint-config-next
+- next : https://github.com/KimJeonghun91/next-my-core
+- styled-components : (예정)
+- mui : (예정)
 
 
-## Getting Started
-
-First, run the development server:
+### Getting Started
+yarn을 사용해주세요!!
 
 ```bash
-npm run dev
-# or
+yarn install
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
