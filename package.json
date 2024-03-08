@@ -21,8 +21,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist && ncc build ./index.ts -w -o dist/",
-    "test": "node ./dist/index.js",
+    "build:pkg": "rm -rf dist && ncc build ./index.ts -w -o dist/",
+    "test:pkg": "node ./dist/index.js",
     "publish:npm": "npm publish",
     "----prerelease": "node ../../scripts/rm.mjs dist",
     "----release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",

@@ -6,10 +6,10 @@
 
 ```bash
 # 빌드
-npm run build
+npm run build:pkg
 
 # 테스트
-npm run test
+npm run test:pkg
 
 ```
 
