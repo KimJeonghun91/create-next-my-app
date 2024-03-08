@@ -173,7 +173,7 @@ export const installTemplate = async ({
   /** Create a package.json for the new project and write it to disk. */
   const packageJson: any = {
     name: appName,
-    version: "0.1.0",
+    version: "0.1.0", 
     private: true,
     scripts: {
       dev: "next dev",
