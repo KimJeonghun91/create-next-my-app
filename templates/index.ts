@@ -7,7 +7,6 @@ import fs from "fs/promises";
 import path from "path";
 import { cyan, bold } from "picocolors";
 import { Sema } from "async-sema";
-import pkg from "../package.json";
 
 import { GetTemplateFileArgs, InstallTemplateArgs } from "./types";
 
@@ -168,8 +167,8 @@ export const installTemplate = async ({
   }
 
   /** Copy the version from package.json or override for tests. */
-  const baseNextVersion = '14.1.2';
-  const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
+  const baseNextVersion = "14.1.2";
+  const nextRepository = "https://github.com/KimJeonghun91/next-my-core";
 
   /** Create a package.json for the new project and write it to disk. */
   const packageJson: any = {
@@ -244,7 +243,7 @@ export const installTemplate = async ({
 
   console.log();
 
-  await install(packageManager, isOnline);
+  // await install(packageManager, isOnline);
 };
 
 export * from "./types";
