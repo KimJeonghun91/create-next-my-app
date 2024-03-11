@@ -175,55 +175,35 @@ export const installTemplate = async ({
   /** Create a package.json for the new project and write it to disk. */
   const packageJson: any = {
     name: appName,
-    version: "0.1.0", 
+    version: "0.1.0",
     private: true,
     scripts: {
       dev: "next dev",
       build: "next build",
       start: "next start",
-      lint: "next lint",
+      lint: "next lint"
     },
     /**
      * Default dependencies.
      */
     dependencies: {
-      react: "^18",
-      "react-dom": "^18",
-      next: nextRepository,
+      "@emotion/react": "11.11.4",
+      "@emotion/styled": "11.11.0",
+      "dayjs": "1.11.10",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "next": nextRepository,
+      "my-mui": "https://github.com/KimJeonghun91/mui-integrated"
     },
-    devDependencies: {},
-  };
-
-  /**
-   * TypeScript projects will have type definitions and other devDependencies.
-   */
-  if (mode === "ts") {
-    packageJson.devDependencies = {
-      ...packageJson.devDependencies,
-      typescript: "^5",
-      "@types/node": "^20",
-      "@types/react": "^18",
-      "@types/react-dom": "^18",
-    };
-  }
-
-  /* Add Tailwind CSS dependencies. */
-  if (tailwind) {
-    packageJson.devDependencies = {
-      ...packageJson.devDependencies,
-      postcss: "^8",
-      tailwindcss: "^3.4.1",
-    };
-  }
-
-  /* Default ESLint dependencies. */
-  if (eslint) {
-    packageJson.devDependencies = {
-      ...packageJson.devDependencies,
-      eslint: "^8",
+    devDependencies: {
+      "@types/node": "20.11.25",
+      "@types/react": "18.2.64",
+      "@types/react-dom": "18.2.21",
+      "eslint": "8.57.0",
       "eslint-config-next": baseNextVersion,
-    };
-  }
+      "typescript": "^5"
+    },
+  };
 
   const devDeps = Object.keys(packageJson.devDependencies).length;
   if (!devDeps) delete packageJson.devDependencies;
