@@ -2,17 +2,14 @@
 - ts
 - next 14.1.3
 - app-router
-- eslint
+
 
 ### CLI
 - https://github.com/KimJeonghun91/create-next-my-app
 
+
 ### Installing dependencies:
-- next : https://github.com/KimJeonghun91/next-my-core
-- styled-components : (예정)
-- mui : "my-mui": "https://github.com/KimJeonghun91/mui-integrated"
-- zustand : (예정)
-- react-query : (예정)
+- my-mui : https://github.com/KimJeonghun91/my-mui
 
 
 ### Getting Started
