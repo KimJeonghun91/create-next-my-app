@@ -1,13 +1,10 @@
-import { install } from "../helpers/install";
 import { copy } from "../helpers/copy";
-
 import { async as glob } from "fast-glob";
 import os from "os";
 import fs from "fs/promises";
 import path from "path";
 import { cyan, bold } from "picocolors";
 import { Sema } from "async-sema";
-import pkg from "../package.json";
 
 import { GetTemplateFileArgs, InstallTemplateArgs } from "./types";
 
@@ -22,7 +19,7 @@ export const getTemplateFile = ({
   return path.join(__dirname, template, mode, file);
 };
 
-export const SRC_DIR_NAMES = ["app", "pages", "styles"];
+export const SRC_DIR_NAMES = ["app", "pages", "styles", "entities", "features", "shared", "widgets"];
 
 /**
  * Install a Next.js internal template to a given `root` directory.
@@ -112,7 +109,7 @@ export const installTemplate = async ({
             ).replace(`@/`, `${importAlias.replace(/\*/g, "")}`),
           );
         }
-        await writeSema.release();
+        writeSema.release();
       }),
     );
   }
@@ -170,7 +167,9 @@ export const installTemplate = async ({
   /** Copy the version from package.json or override for tests. */
   // const version = process.env.NEXT_PRIVATE_TEST_VERSION ?? pkg.version;
   const baseNextVersion = '14.1.3';
-  const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
+  
+  // ! 미사용
+  // const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
 
   /** Create a package.json for the new project and write it to disk. */
   const packageJson: any = {
@@ -189,11 +188,14 @@ export const installTemplate = async ({
     dependencies: {
       "@emotion/react": "11.11.4",
       "@emotion/styled": "11.11.0",
+      "@mui/material": "5.15.13",
+      "@mui/system": "5.15.13",
+      "@mui/x-date-pickers": "6.19.6",
+      "@kimjeonghun91/my-mui": "*",
       "dayjs": "1.11.10",
       "react": "18.2.0",
       "react-dom": "18.2.0",
-      "next": nextRepository,
-      "my-mui": "https://github.com/KimJeonghun91/mui-integrated"
+      "next": baseNextVersion
     },
     devDependencies: {
       "@types/node": "20.11.25",

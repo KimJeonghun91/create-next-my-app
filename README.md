@@ -2,7 +2,9 @@
 
 ```tsx
 const baseNextVersion = '14.1.3';
-const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
+
+// ! 미사용
+// const nextRepository = 'https://github.com/KimJeonghun91/next-my-core';
 ```
 
 ### 개발

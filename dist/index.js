@@ -29270,7 +29270,7 @@ var lib = __nccwpck_require__(1884);
 const getTemplateFile = ({ template, mode, file, }) => {
     return __nccwpck_require__.ab + "templates/" + template + '/' + mode + '/' + file;
 };
-const SRC_DIR_NAMES = ["app", "pages", "styles"];
+const SRC_DIR_NAMES = ["app", "pages", "styles", "entities", "features", "shared", "widgets"];
 /**
  * Install a Next.js internal template to a given `root` directory.
  */
@@ -29327,7 +29327,7 @@ const installTemplate = async ({ appName, root, packageManager, isOnline, templa
             if ((await external_fs_promises_default().stat(filePath)).isFile()) {
                 await external_fs_promises_default().writeFile(filePath, (await external_fs_promises_default().readFile(filePath, "utf8")).replace(`@/`, `${importAlias.replace(/\*/g, "")}`));
             }
-            await writeSema.release();
+            writeSema.release();
         }));
     }
     if (srcDir) {
@@ -29370,11 +29370,14 @@ const installTemplate = async ({ appName, root, packageManager, isOnline, templa
         dependencies: {
             "@emotion/react": "11.11.4",
             "@emotion/styled": "11.11.0",
+            "@mui/material": "5.15.13",
+            "@mui/system": "5.15.13",
+            "@mui/x-date-pickers": "6.19.6",
+            "@kimjeonghun91/my-mui": "*",
             "dayjs": "1.11.10",
             "react": "18.2.0",
             "react-dom": "18.2.0",
-            "next": nextRepository,
-            "my-mui": "https://github.com/KimJeonghun91/mui-integrated"
+            "next": baseNextVersion
         },
         devDependencies: {
             "@types/node": "20.11.25",
@@ -29515,7 +29518,7 @@ function validateNpmName(name) {
 }
 
 ;// CONCATENATED MODULE: ./package.json
-const package_namespaceObject = JSON.parse('{"name":"create-next-my-app","version":"0.0.3","keywords":["react","next","next.js"],"description":"Create Next.js의 커스텀 CLI 입니다.","repository":{"type":"git","url":"https://github.com/KimJeonghun91/create-next-my-app","directory":"packages/create-next-my-app"},"author":"KimJeonghun91","license":"MIT","bin":{"create-next-my-app":"./dist/index.js"},"files":["dist"],"scripts":{"build:pkg":"rm -rf dist && ncc build ./index.ts -w -o dist/","test:pkg":"node ./dist/index.js","publish:npm":"npm publish","----prerelease":"node ../../scripts/rm.mjs dist","----release":"ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register","----prepublishOnly":"cd ../../ && turbo run build","----build":"pnpm release","----lint-fix":"pnpm prettier -w --plugin prettier-plugin-tailwindcss \'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}\'"},"devDependencies":{"@types/async-retry":"1.3.0","@types/ci-info":"2.0.0","@types/cross-spawn":"6.0.0","@types/node":"^20.2.5","@types/prompts":"2.4.2","@types/tar":"6.1.5","@types/validate-npm-package-name":"3.0.0","@vercel/ncc":"0.34.0","async-retry":"1.3.1","async-sema":"^3.1.1","ci-info":"watson/ci-info#f43f6a1cefff47fb361c88cf4b943fdbcaafe540","commander":"2.20.0","conf":"10.2.0","cross-spawn":"7.0.3","fast-glob":"3.3.1","picocolors":"1.0.0","prettier-plugin-tailwindcss":"0.3.0","prompts":"2.4.2","tar":"6.1.15","typescript":"^5.3.3","update-check":"1.5.4","validate-npm-package-name":"3.0.0"},"engines":{"node":">=18.17.0"}}');
+const package_namespaceObject = JSON.parse('{"name":"create-next-my-app","version":"0.0.4","keywords":["react","next","next.js"],"description":"Create Next.js의 커스텀 CLI 입니다.","repository":{"type":"git","url":"https://github.com/KimJeonghun91/create-next-my-app","directory":"packages/create-next-my-app"},"author":"KimJeonghun91","license":"MIT","bin":{"create-next-my-app":"./dist/index.js"},"files":["dist"],"scripts":{"build:pkg":"rm -rf dist && ncc build ./index.ts -w -o dist/","test:pkg":"node ./dist/index.js","publish:npm":"npm publish","----prerelease":"node ../../scripts/rm.mjs dist","----release":"ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register","----prepublishOnly":"cd ../../ && turbo run build","----build":"pnpm release","----lint-fix":"pnpm prettier -w --plugin prettier-plugin-tailwindcss \'templates/*-tw/{ts,js}/{app,pages}/**/*.{js,ts,tsx}\'"},"devDependencies":{"@types/async-retry":"1.3.0","@types/ci-info":"2.0.0","@types/cross-spawn":"6.0.0","@types/node":"^20.2.5","@types/prompts":"2.4.2","@types/tar":"6.1.5","@types/validate-npm-package-name":"3.0.0","@vercel/ncc":"0.34.0","async-retry":"1.3.1","async-sema":"^3.1.1","ci-info":"watson/ci-info#f43f6a1cefff47fb361c88cf4b943fdbcaafe540","commander":"2.20.0","conf":"10.2.0","cross-spawn":"7.0.3","fast-glob":"3.3.1","picocolors":"1.0.0","prettier-plugin-tailwindcss":"0.3.0","prompts":"2.4.2","tar":"6.1.15","typescript":"^5.3.3","update-check":"1.5.4","validate-npm-package-name":"3.0.0"},"engines":{"node":">=18.17.0"}}');
 ;// CONCATENATED MODULE: ./index.ts
 /* eslint-disable import/no-extraneous-dependencies */
 
